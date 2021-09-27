@@ -9,7 +9,7 @@ export const info: UntypedHandleCall = (call: ServerUnaryCall<ApplicationLogMess
 }
 
 export const debug: UntypedHandleCall = (call: ServerUnaryCall<ApplicationLogMessage, SerializedApplicationLogMessage>, callback: sendUnaryData<SerializedApplicationLogMessage>) => {
-    const msg = serialize(call.request, "warn");
+    const msg = serialize(call.request, "debug");
     console.log("[grpc-call]", msg);
     callback(null, {msg})
 }
@@ -21,7 +21,7 @@ export const warn: UntypedHandleCall = (call: ServerUnaryCall<ApplicationLogMess
 }
 
 export const error: UntypedHandleCall = (call: ServerUnaryCall<ApplicationLogMessage, SerializedApplicationLogMessage>, callback: sendUnaryData<SerializedApplicationLogMessage>) => {
-    const msg = serialize(call.request, "warn");
+    const msg = serialize(call.request, "error");
     console.log("[grpc-call]", msg);
     callback(null, {msg})
 }
