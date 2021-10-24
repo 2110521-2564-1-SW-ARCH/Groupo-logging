@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: groupo-logging
+spec:
+  selector:
+    app: groupo-logging
+  ports:
+  - protocol: TCP
+    port: 40043
+    targetPort: 40043
