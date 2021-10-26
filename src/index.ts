@@ -23,6 +23,6 @@ server.bindAsync('0.0.0.0:' + process.env.GRPC_SERVER_PORT, grpc.ServerCredentia
     const protoMessage = logger
         .set("GRPC_SERVER_PORT", process.env.GRPC_SERVER_PORT)
         .message("start logging gRPC server").proto();
-    console.log(serialize(protoMessage, "info"))
+    console.log(serialize(protoMessage, "info"));
     server.start();
 });
