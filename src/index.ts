@@ -26,5 +26,3 @@ server.bindAsync('0.0.0.0:' + process.env.GRPC_SERVER_PORT, grpc.ServerCredentia
     console.log(serialize(protoMessage, "info"));
     server.start();
 });
-
-//change
